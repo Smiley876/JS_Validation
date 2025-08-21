@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validating Input in JS</title>
+    </head>
+
+    <body>
+        <p> Enter a number and click ok</p>
+        <h4>Number: </h4>
+        <input type="number" name="num" id="num" min="1" max="100" required>
+        <button onclick="validateInput()">OK!</button>
+        <p id="results"></p>
+
+        <script>
+            function validateInput(){
+                let input = document.getElementById("num");
+
+                if(!input.checkValidity())
+            {
+                document.getElementById("results").innerHTML = input.validationMessage;
+            }
+            else{
+                document.getElementById("results").innerHTML = "Number is okay";
+            }
+            }
+        </script>
+    </body>
+</html>
